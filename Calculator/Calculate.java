@@ -1,10 +1,10 @@
-public class Calculate {
+class Calculate {
     private String operation1;
     private String[] newInput;
     private NumberSystem numberSystem = NumberSystem.ARABIC;
 
     //.............check how more operation in String input and return a symbol of operation......//
-    public int checkOperation1(String input) throws Exception{
+    public void checkOperation1(String input) throws Exception{
         final String[] valueOperations = {"+", "-", "*", "/"};
         int count = 0;
         for (String operation : valueOperations){
@@ -16,7 +16,6 @@ public class Calculate {
                 }
             }
         }
-        return 0;
     }
 //............................................................................................//
 
@@ -24,7 +23,6 @@ public class Calculate {
     public void splitInput(String input) throws Exception {
         String [] splitInput = input.split("\\%s".formatted(operation1));
         for (String split : splitInput){
-            System.out.println(split);
             try {
                 if (Integer.parseInt(split) == 0 || Integer.parseInt(split) > 10) {
                     throw new Exception("т.к. число равно нулю или более 10");
