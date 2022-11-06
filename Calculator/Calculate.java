@@ -24,7 +24,6 @@ public class Calculate {
     public void splitInput(String input) throws Exception {
         String [] splitInput = input.split("\\%s".formatted(operation1));
         for (String split : splitInput){
-            System.out.println(split);
             try {
                 if (Integer.parseInt(split) == 0 || Integer.parseInt(split) > 10) {
                     throw new Exception("т.к. число равно нулю или более 10");
