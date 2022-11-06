@@ -27,9 +27,7 @@ class Calculate {
                 if (Integer.parseInt(split) == 0 || Integer.parseInt(split) > 10) {
                     throw new Exception("т.к. число равно нулю или более 10");
                 }
-            } catch (NumberFormatException ignored){
-
-            }
+            } catch (NumberFormatException ignored){}
         }
         this.newInput = splitInput;
     }
@@ -45,8 +43,11 @@ class Calculate {
         //....check system....
         if (numbers[0]!=0 && numbers[1]!=0){
             this.numberSystem = NumberSystem.ROMAN;
-            for (int number : numbers)
-                if (number > 10 || number < 1) throw new Exception("т.к. нарушено условие: от 1 до 10.");
+            for (int number : numbers) {
+                if (number > 10 || number < 1) {
+                    throw new Exception("т.к. нарушено условие: от 1 до 10.");
+                }
+            }
         }
         //..........................................
         else if (numbers[0]==0 && numbers[1]==0){
